@@ -1,0 +1,248 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+}
+
+.sideBar {
+  width: 300px;
+  min-width: 300px;
+  border-right: 1px solid #ccc;
+  padding: 2rem;
+
+  .logo {
+    margin-bottom: 2rem;
+
+    a {
+      font-size: 30px;
+    }
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgb(96 125 139);
+  }
+
+  .menu {
+    margin-top: 25px;
+
+    ul {
+      li {
+        a {
+          display: block;
+          font-weight: 600;
+          color: #333;
+          cursor: pointer;
+
+          &:hover {
+            color: blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content {
+  overflow: auto;
+  flex: 1;
+  background-color: #eee;
+
+  .header {
+    position: sticky;
+    top: 0;
+    height: 60px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    background-color: #fff;
+    width: 100%;
+    .search {
+      flex: 1;
+      position: relative;
+      border: none;
+      align-items: center;
+
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          width: 17px;
+          height: 17px;
+        }
+      }
+
+      input {
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+        padding: 0 50px;
+      }
+    }
+
+    .download {
+      display: flex;
+      
+      .allBrands {
+        display: flex;
+      }
+    }
+  }
+
+  .brands {
+    padding: 25px;
+
+    .brand {
+      border: 1px solid black;
+      background-color: #fff;
+      padding: 14px;
+      margin-bottom: 10px;
+
+      &.selected {
+        border-width: 2px;
+        border-style: dashed;
+        border-color: red;
+
+        .brand-colors {
+          span {
+            cursor: pointer;
+            flex: 1;
+
+            &:hover {
+              text-indent: 0;
+            }
+          }
+        }
+      }
+
+      h5 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      &-colors {
+        display: flex;
+
+        span {
+          background-color: var(--bgColor);
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 4px;
+          border-radius: 2px;
+          font-size: 14px;
+          font-weight: 500;
+          color: var(--textColor);
+          text-indent: -9999px;
+          width: 40px;
+        }
+      }
+    }
+  }
+}
+
+.copied {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  padding: 20px 15px;
+  background-color: grey;
+  color: white;
+  border-radius: 4px;
+}
+
+
+.Modal {
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  background-color: white;
+  width: 50%;
+  height: 60%;
+  padding: 0px 20px 0px 20px;
+  box-shadow: 2px 2px 8px 2px rgb(0, 0, 0, 0.2);
+
+  button {
+    position: relative;
+    left: 97%;
+    top: 10px;
+    padding: 6px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(248, 18, 18);
+    box-shadow: 2px 2px 8px 2px rgb(0, 0, 0, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+    svg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: bolder;
+
+      path {
+        stroke: white;
+        stroke-width: 5;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 40px;
+    line-height: 1.4;
+  }
+
+  p {
+    line-height: 1.6;
+    font-weight: 500;
+    color: rgb(96 125 139);
+    margin-top: 5px;
+  }
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(255, 255, 255, 0.7);
+}
